@@ -1,1 +1,2 @@
-This directory its a test
+ directory it a test
+teste testete
