@@ -6,11 +6,11 @@
 To put a programmed software on PIC requires:
    - The hex code of the programmed sofware
    - Hardware to make the bridge across hex file and PIC (upload)
-##### Hex code
+#### Hex code
 The hex code can be obtained from a software designed to program PIC or a compiler that can produce a hex **to microprocessor PIC**.
 The main reason that not any compiler can be used it's 'cause PIC programms have particularities with the hardware, like configure bits. The compiler must be setup to the chosen PIC 'cause these configuration bits can be different from PIC to PIC. I used IDEs which produced my hex files ( MIKROC, MBLAB, MikroProg).
 
-##### Hardware upload
+#### Hardware upload
 Uploading a PIC program can be made with differents ways. Using a PICKIT its the most easy but have the inconvenience of buy that item. Considering it and that I have a arduino on my hands, i founded the project **Ardpicprog** that teach how to make the bridge to upload PIC programs using a arduino. With the help of my teacher, we changed the provide file from the project to make it work more appropriately. The file can be found [here](https://github.com/bubaluza/Microcontrollers/blob/master/PIC16F877A/arduinoPic.ino).
 For more information about the Ardpicprog project(e.g electric schematic, suggested PCB) see at [ardpicprog](http://rweather.github.io/ardpicprog).
 
