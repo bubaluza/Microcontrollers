@@ -1,13 +1,13 @@
 #  PIC16F877A
    This directory its exclusive for programs that run in PIC16F877A. 
    
-   ![alt text](https://i1.wp.com/microcontrollerslab.com/wp-content/uploads/2015/08/PIC16F877A-microcontroller.jpg?resize=300%2C225)
+   ![PIC16F877A](https://i1.wp.com/microcontrollerslab.com/wp-content/uploads/2015/08/PIC16F877A-microcontroller.jpg?resize=300%2C225)
 # Uploading code
 To put a programmed software on PIC requires:
    - The hex code of the programmed sofware
    - Hardware to make the bridge across hex file and PIC (upload)
 #### Hex code
-The hex code can be obtained from a software designed to program PIC or a compiler that can produce a hex **to microprocessor PIC**.
+The hex code can be obtained from a software designed to program PIC or a compiler that can produce a hex **to microprocessors PIC**.
 The main reason that not any compiler can be used it's 'cause PIC programms have particularities with the hardware, like configure bits. The compiler must be setup to the chosen PIC 'cause these configuration bits can be different from PIC to PIC. I used IDEs which produced my hex files ( MIKROC, MBLAB, MikroProg).
 
 #### Hardware upload
