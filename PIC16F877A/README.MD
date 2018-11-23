@@ -18,6 +18,6 @@ For more information about the Ardpicprog project(e.g electric schematic, sugges
 Like every beginning on a languague, we need to make the famous "Hello World". In hardware, the hello world  it's made intented to blink a LED on visible frequency. Was programmed in assembly and C.
 
 # Voltmeter
-The need to measure physical quantity made a branch technology. A voltmeter it's a device that can measure the Voltage on a eletrical cable. The program covers the voltage measure on a potenciometer on a range of o to 5 Voltz and show on a LCD display.
+The need to measure physical quantity made a branch technology. A voltmeter it's a device that can measure the Voltage on a eletrical cable. The program covers the voltage measure on a potenciometer on a range of o to 5 Volts and show on a LCD display. Programmed in C.
 
 
