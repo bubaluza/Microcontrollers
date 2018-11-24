@@ -8,7 +8,7 @@ const char* password = "PASSWORD";
 // ---------------- OBJECT INSTANCE ----------------
 WiFiClientSecure client;
 DHTesp dht;
- ---------------- REQUEST ----------------
+// ---------------- REQUEST ----------------
 String textFix = "GET /forms/d/e/1FAIpQLSc1pS7s4cM9XxAa5lIBFoa52fWlC9D1bEbzP5Exy0WQWxkp6/formResponse?ifq&entry.771615963=";
 
 // ---------------- SENSOR PIN ----------------
