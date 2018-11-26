@@ -2,7 +2,7 @@
 Flashing a LED on a micro aka. Hello World its the first step to do on any hardware. 
 >Those who  blink a LED,  rule the world!
 
-The structure of the software it's quite simple. Must set a HIGH sign on a pin which a LED its connected and them set a LOW sign at same pin, repeting the process infinitely.
+The structure of the software it's quite simple. Must set a HIGH sign on a pin which a LED its connected and them set a LOW sign at same pin, repeting the process infinitely. We need to put a delay between the state to the result be visible.
 
 As the program are in assembly ( thats right, dont run from that), delay function are not ready onboard ( a least on the clean assembly for 8051) and we must do that.
 
