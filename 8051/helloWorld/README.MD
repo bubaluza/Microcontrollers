@@ -6,6 +6,13 @@ The structure of the software it's quite simple. Must set a HIGH sign on a pin w
 
 As the program are in assembly ( thats right, dont run from that), delay function are not ready onboard ( a least on the clean assembly for 8051) and we must do that.
 
+# Flow Chart
+
+![alt text](https://github.com/bubaluza/Microcontrollers/blob/master/8051/helloWorld/flowChartBlink.png)
+
+  The languague displayed are brazilian portuguese(PT-BR).
+
+
 # Delay in Assembly
 
 Delay are functions that spend machine time doing 'nothing'. The main idea for that it's use instructions in a way that the machine run-in-place. 
