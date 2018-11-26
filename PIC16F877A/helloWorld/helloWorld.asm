@@ -1,21 +1,21 @@
-;	Programa destinado a disciplina de microControladores da Universidade Estadual de Ponta Grossa
-;	Curso de Engenharia de computação, Quarto Ano, 2018
-;	Esse programa destina-se a implementação de um 'hello world' na linguagem assembly em PIC
+;	Program destined to microprocessor disciplines From Universidade Estadual de Ponta Grossa(UEPG)
+;	Computer Engineering, fourth year, 2018
+;	this program implements a 'hello world' in assembly to PIC
 ;	PIC16F877A
-;	Autor: Gabriel João Schiller, Gabriel Oliveira, Luiz Otávio
+;	Author: Gabriel João Schiller
 
 
 
-	list p=16f877a				;MicroControlador utilizado PIC16F877A
+	list p=16f877a				;used microcontroller PIC16F877A
 	
-; --- Arquivos incluídos no projeto ---
-	#include <pic16f877a.inc>		;Biblioteca do pic16f877a
+; --- FILE INCLUDE ---
+	#include <pic16f877a.inc>		;library to pic16f877a
 	
 ; --- Fuse Bit ---
-;cristal oscilador externo 12 mhz, sem watchdog, com power up timer, sem proteção de código
+;extern crystal oscillator, watchdog OFF, powerup time, code proctection OFF
 	__config _HS_OSC & _WDT_OFF & _PWRTE_ON & _CP_OFF 
 	
-; --- Paginação de memória ---
+; --- memory pagination ---
 ; bank3
 ; bsf	STATUS, RP1
 ; bsf	STATUS, RP0
@@ -32,46 +32,43 @@
 ; bcf	STATUS, RP1
 ; bcf	STATUS, RP0
 
-; --- Saídas ---
+; --- OUTPUTS ---
 #define led		PORTD,3
 	
-; --- Vetor de RESET ---
-			org		H'0000'				;Origem no endereço 0000h de memória
-			goto	inicio				;desvia para inicio
+; --- org reset ---
+			org		H'0000'				;Origin memory address 0000h
+			goto	inicio					;go to inicio
 
-; --- Vetor de interrupção ---
-			org		H'0004'				;endereço de interrupção
-			retfie						;retorna interrupção
+; --- org interruption ---
+			org		H'0004'				;interruption memory address
+			retfie						;return interruption
 	
-; --- Programa de interrupção ---
-			
-inicio:
+; --- main program ---
 			bcf	STATUS, RP1
-			bsf	STATUS, RP0				;mudamos para o bank1
+			bsf	STATUS, RP0				;select bank1
 			
-			movlw	H'00'				;w= b'0000 0000'
-			movwf	TRISD				;todas os pinos D são configuradas para saida
+			movlw	H'00'					;work= b'0000 0000'
+			movwf	TRISD					;set PinD OUTPUT
 			bcf	STATUS, RP1
-			bcf	STATUS, RP0				;mudamos para o bank0
+			bcf	STATUS, RP0				;select bank0
+			
+loop:
 			movlw	H'00'
-			movwf	PORTD
+			movwf	PORTD					;pinD LOW
+			call delay			
+			movlw	H'FF'			
+			movwf	PORTD					pinD HIGH
 			call delay
-			movlw	H'FF'
-			movwf	PORTD
-			call delay
-			goto	inicio
+			goto	loop					
 			
 			
-; --- Subrotinas ---
+; --- Functions ---
 delay:
 			movlw 	d'250'
 			movwf	H'20'
-					;2 ciclos
 aux1:
 			movlw	d'250'
 			movwf	H'21'
-					;2 ciclos
-
 aux2:		
 			nop
 			nop
@@ -121,12 +118,10 @@ aux2:
 			nop
 			nop
 			decfsz	H'21'
-			goto	aux2	;50*250 ciclos =12500 ciclos
+			goto	aux2	;50*250 = 12500 cycles
 			
 			decfsz 	H'20'
-			goto	aux1	;250*12500=250000
-					;com um cristal de 12mhz aproximadamente 1s de delay
+			goto	aux1	;250*12500=3125000 cycles
+					;with 12Mhz crystal oscillator = 1s delay
 			return
-
 			end
-			
